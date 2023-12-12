@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_TC } from 'next/font/google';
 import './globals.css';
 import { Navigation } from '../components/Navigation';
 
-const inter = Inter({ subsets: ['latin'] });
+const noto_sans_tc = Noto_Sans_TC({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={noto_sans_tc.className}>
         <Navigation />
         <div className='container'>{children}</div>
       </body>

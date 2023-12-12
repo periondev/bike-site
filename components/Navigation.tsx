@@ -39,8 +39,8 @@ export const Navigation = (props: any) => {
             <Image
               loading='lazy'
               src='/logo_180x180.png'
-              className='aspect-square object-contain object-center overflow-hidden shrink-0 max-w-full'
-              alt=''
+              className='aspect-square object-contain object-center shrink-0 max-w-full w-[65px] md:w-[95px]'
+              alt='logo'
               width={95}
               height={95}
             />
@@ -52,11 +52,11 @@ export const Navigation = (props: any) => {
                 <Link
                   key={path}
                   href={path}
-                  className='text-lime-700 text-lg font-medium leading-6'
+                  className='text-secondary text-lg font-medium leading-6'
                 >
                   <span
                     className={clsx('btn btn-sm rounded-lg btn-ghost md:mb-3', {
-                      'text-lime-400 text-lg font-bold leading-6': isActive,
+                      'text-primary text-lg font-bold leading-6': isActive,
                     })}
                   >
                     {name}
@@ -66,14 +66,23 @@ export const Navigation = (props: any) => {
             })}
           </div>
         </div>
+        {isMenuOpen ? (
+          <button
+            onClick={toggleMenu}
+            className='md:hidden text-3xl text-neutral-600 dark:text-neutral-300'
+          >
+            <Image src='/close_24px.svg' alt='close' width={24} height={24} />
+          </button>
+        ) : (
+          <button
+            onClick={toggleMenu}
+            className='md:hidden text-3xl text-neutral-600 dark:text-neutral-300'
+          >
+            <Image src='/menu_24px.svg' alt='menu' width={24} height={24} />
+          </button>
+        )}
         <button
-          onClick={toggleMenu}
-          className='md:hidden text-3xl text-neutral-600 dark:text-neutral-300'
-        >
-          &#9776;
-        </button>
-        <button
-          className='hidden md:flex text-white text-center text-lg bg-lime-400 my-auto px-6 py-2 rounded-full max-md:px-5'
+          className='hidden md:flex text-white text-center text-lg bg-primary my-auto px-6 py-2 rounded-full'
           aria-label='Login'
         >
           登入

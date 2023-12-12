@@ -24,7 +24,7 @@ const navItems = {
 export const OpenMenu = (props: any) => {
   const pathname = usePathname() || '/';
   return (
-    <nav className='flex flex-col md:hidden min-h-[80vh] justify-between p-8 bg-lime-400'>
+    <nav className='flex flex-col md:hidden min-h-[80vh] justify-between p-8 bg-primary'>
       <div className='flex flex-col gap-8'>
         {Object.entries(navItems).map(([path, { name }]) => {
           const isActive = path === pathname;
@@ -36,7 +36,7 @@ export const OpenMenu = (props: any) => {
             >
               <span
                 className={clsx('btn btn-sm rounded-lg btn-ghost md:mb-3', {
-                  'text-lime-700 text-lg font-bold leading-6': isActive,
+                  'text-secondary text-lg font-bold leading-6': isActive,
                 })}
               >
                 {name}
@@ -46,7 +46,7 @@ export const OpenMenu = (props: any) => {
         })}
       </div>
       <button
-        className='text-lime-400 text-lg bg-white px-6 py-2 rounded-full'
+        className='text-primary text-lg bg-white my-0 mr-auto px-6 py-2 rounded-full'
         aria-label='Login'
       >
         登入
